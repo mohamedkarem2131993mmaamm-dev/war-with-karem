@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>الحرب مع كارم | السيادة الرياضية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        :root { --primary-red: #dc2626; --bg-dark: #050505; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: #fff; overflow-x: hidden; user-select: none; }
+        .tab-content { display: none; opacity: 0; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .nav-blur { backdrop-filter: blur(25px); background: rgba(5, 5, 5, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        .active-tab { color: var(--primary-red); transform: translateY(-4px); }
+        .card-premium { background: linear-gradient(165deg, #121212, #080808); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="pb-28">
+    <header class="sticky top-0 z-[100] nav-blur border-b border-white/5 p-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="bg-red-600 p-2 rounded-xl shadow-lg shadow-red-900/30"><i data-lucide="shield-check" class="w-5 h-5 text-white"></i></div>
+            <h1 class="text-xl font-black italic tracking-tighter text-white">الحرب مع كارم</h1>
+        </div>
+        <div class="flex items-center gap-2 bg-zinc-900/80 px-3 py-1.5 rounded-full border border-white/5">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-bold text-zinc-300 tracking-wide uppercase">Aura Active</span>
+        </div>
+    </header>
+
+    <main class="p-4 max-w-2xl mx-auto">
+        <div id="radar-tab" class="tab-content active space-y-5">
+            <div class="bg-gradient-to-br from-red-900/30 via-black to-black p-6 rounded-[2.5rem] border border-red-600/20 relative overflow-hidden">
+                <span class="bg-red-600 text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest">حصري</span>
+                <h2 class="text-2xl font-black mt-4 leading-tight text-white">تحليل "ميركاتو السيادة": صفقات تخرج عن السيطرة!</h2>
+                <p class="text-[11px] text-zinc-500 mt-3 font-bold italic flex items-center gap-2">المصدر: استخبارات "الحرب مع كارم"</p>
+            </div>
+            <div class="card-premium p-5 rounded-3xl flex items-center gap-5">
+                <div class="bg-red-600/10 p-3 rounded-2xl border border-red-600/20"><i data-lucide="trending-up" class="text-red-500 w-6 h-6"></i></div>
+                <div>
+                    <p class="text-[13px] font-bold leading-snug">مرموش يتصدر رادار ليفربول لخلافة الملك المصري.</p>
+                    <p class="text-[10px] text-zinc-600 mt-1 font-medium">منذ ساعتين • تحليل تقني</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="profile-tab" class="tab-content py-10 text-center">
+            <div class="relative w-28 h-28 mx-auto mb-6">
+                <div class="absolute inset-0 bg-red-600 blur-2xl opacity-20 animate-pulse"></div>
+                <div class="relative w-full h-full bg-zinc-900 rounded-full border-2 border-red-600/50 flex items-center justify-center p-1">
+                    <div class="w-full h-full rounded-full bg-black flex items-center justify-center border border-white/10">
+                        <i data-lucide="fingerprint" class="w-12 h-12 text-red-600"></i>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-2xl font-black italic tracking-tight">القائد كارم</h3>
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-[0.2em] mt-1">رئيس وحدة هندسة العقول</p>
+        </div>
+    </main>
+
+    <nav class="fixed bottom-0 left-0 right-0 nav-blur px-6 py-4 pb-10 flex justify-around items-center">
+        <button onclick="openTab('radar', this)" class="tab-btn active-tab flex flex-col items-center gap-1.5"><i data-lucide="layout-grid" class="w-6 h-6"></i><span class="text-[10px] font-black">الرادار</span></button>
+        <button onclick="openTab('profile', this)" class="tab-btn text-zinc-500 flex flex-col items-center gap-1.5"><i data-lucide="fingerprint" class="w-6 h-6"></i><span class="text-[10px] font-black">السيادة</span></button>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+        function openTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active-tab'); b.classList.add('text-zinc-500'); });
+            document.getElementById(tabId + '-tab').classList.add('active');
+            btn.classList.add('active-tab'); btn.classList.remove('text-zinc-500');
+            if (window.navigator.vibrate) window.navigator.vibrate(8);
+        }
+    </script>
+</body>
+</html>
