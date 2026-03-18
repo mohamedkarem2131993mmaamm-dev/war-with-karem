@@ -10,15 +10,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
         :root { --primary-red: #dc2626; --bg-dark: #050505; }
         body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: #fff; overflow-x: hidden; }
-       .tab-content { display: none; opacity: 0; }
-       .tab-content.active { display: block; animation: fadeIn 0.4s forwards; }
+      .tab-content { display: none; opacity: 0; }
+      .tab-content.active { display: block; animation: fadeIn 0.4s forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-       .nav-blur { backdrop-filter: blur(25px); background: rgba(5, 5, 5, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.08); }
-       .radar-pulse { position: relative; }
-       .radar-pulse::after { content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #dc2626; border-radius: 50%; opacity: 0.3; animation: pulse 2s infinite; z-index: -1; }
+      .nav-blur { backdrop-filter: blur(25px); background: rgba(5, 5, 5, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .radar-pulse { position: relative; }
+      .radar-pulse::after { content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #dc2626; border-radius: 50%; opacity: 0.3; animation: pulse 2s infinite; z-index: -1; }
         @keyframes pulse { 0% { transform: scale(1); opacity: 0.3; } 100% { transform: scale(2.5); opacity: 0; } }
-       .sentiment-bar { height: 6px; border-radius: 3px; background: #222; overflow: hidden; position: relative; }
-       .sentiment-fill { height: 100%; background: linear-gradient(90deg, #dc2626, #facc15, #22c55e); transition: width 1s ease-in-out; }
+      .sentiment-bar { height: 6px; border-radius: 3px; background: #222; overflow: hidden; }
+      .sentiment-fill { height: 100%; transition: width 1s ease-in-out; }
     </style>
 </head>
 <body class="pb-32">
@@ -30,7 +30,7 @@
         </div>
         <div class="flex items-center gap-2 bg-zinc-900/80 px-3 py-1.5 rounded-full border border-white/5">
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Aura Active</span>
+            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Aura Sovereign</span>
         </div>
     </header>
 
@@ -41,76 +41,82 @@
             <div class="bg-gradient-to-br from-red-950/40 via-black to-black p-6 rounded-[2.5rem] border border-red-600/30 relative overflow-hidden">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="bg-red-600 text-[8px] font-black px-2 py-0.5 rounded-full uppercase">رصد استباقي</span>
-                    <span class="text-zinc-500 text-[9px] font-bold italic">دقة 90.4%</span>
+                    <span class="text-zinc-500 text-[9px] font-bold italic">دقة تنبؤية 90.4%</span>
                 </div>
-                <h2 class="text-xl font-black leading-tight text-white">الرادار رصد تحركاً مفاجئاً في تشكيل السيتي الليلة.. هل يضحي غوارديولا بالهجوم لتأمين الوسط؟</h2>
+                <h2 class="text-xl font-black leading-tight text-white italic">"الرادار رصد تحركاً مفاجئاً في تشكيل السيتي ليلة أمس.. رؤية حكيم الميكروفون التقنية كشفت الثغرة قبل الصافرة!"</h2>
                 <div class="mt-5 p-3 bg-zinc-900/60 rounded-2xl border border-white/5 flex items-center justify-between">
-                    <span class="text-[10px] font-bold text-zinc-400 italic">رؤية "حكيم الميكروفون" التقنية</span>
-                    <button class="bg-red-600 text-[9px] font-black px-4 py-2 rounded-xl active:scale-95 transition-all">ادخل للتحليل الكامل</button>
+                    <span class="text-[10px] font-bold text-zinc-400">تحليل موقعة (سيتي × مدريد)</span>
+                    <a href="https://www.facebook.com/share/p/1Ha2Upj3WP/" target="_blank" class="bg-red-600 text-[9px] font-black px-4 py-2 rounded-xl active:scale-95 transition-all">ادخل للتحليل الكامل</a>
                 </div>
             </div>
 
             <div class="bg-zinc-900/30 p-5 rounded-3xl border border-white/5 space-y-4">
                 <div class="flex justify-between items-center">
                     <h3 class="text-[10px] font-black text-zinc-500 uppercase flex items-center gap-2 tracking-widest"><i data-lucide="brain-circuit" class="w-3 h-3 text-red-600"></i> نبض الشارع الرياضي (Live)</h3>
-                    <span class="text-[9px] text-zinc-600 italic">تحليل مشاعر Aura</span>
+                    <span class="text-[9px] text-zinc-600 italic">بذكاء إنساني مُحصن</span>
                 </div>
-                <div class="space-y-3">
+                <div class="space-y-4">
                     <div>
-                        <div class="flex justify-between text-[10px] mb-1"><span>قلق (جماهير سيتي)</span><span>72%</span></div>
-                        <div class="sentiment-bar"><div class="sentiment-fill" style="width: 72%; background: #dc2626;"></div></div>
+                        <div class="flex justify-between text-[10px] mb-1"><span>ثقة جماهير مدريد (بعد التأهل)</span><span>88%</span></div>
+                        <div class="sentiment-bar"><div class="sentiment-fill" style="width: 88%; background: #22c55e;"></div></div>
                     </div>
                     <div>
-                        <div class="flex justify-between text-[10px] mb-1"><span>ثقة (جماهير ريال مدريد)</span><span>88%</span></div>
-                        <div class="sentiment-bar"><div class="sentiment-fill" style="width: 88%; background: #22c55e;"></div></div>
+                        <div class="flex justify-between text-[10px] mb-1"><span>ترقب جمهور ليفربول (عقد صلاح 2027)</span><span>92%</span></div>
+                        <div class="sentiment-bar"><div class="sentiment-fill" style="width: 92%; background: #facc15;"></div></div>
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 gap-4">
-                <div class="bg-zinc-900/50 p-5 rounded-3xl border border-white/5 flex items-center justify-between group">
+                <div class="bg-zinc-900/50 p-5 rounded-3xl border border-white/5 flex items-center justify-between">
                     <div class="flex items-center gap-4">
                         <div class="bg-yellow-600/10 p-3 rounded-2xl border border-yellow-600/20"><i data-lucide="flame" class="text-yellow-600 w-5 h-5"></i></div>
                         <div>
                             <p class="text-[10px] text-zinc-500 font-black uppercase">توقعات الترند</p>
-                            <p class="text-sm font-bold">انفجار مفاجئ لـ "عمر مرموش" الليلة قد يشعل السوشيال ميديا.</p>
+                            <p class="text-sm font-bold leading-snug">انفجار "عمر مرموش" في مانشستر سيتي يكسر حاجز الخوارزميات العالمية.</p>
                         </div>
                     </div>
-                    <i data-lucide="chevron-left" class="text-zinc-700 w-4 h-4 group-active:translate-x-[-5px] transition-all"></i>
                 </div>
             </div>
 
             <div class="flex gap-3">
                 <a href="https://wa.me/201001736901" target="_blank" class="flex-1 bg-green-600/10 border border-green-500/20 py-4 rounded-2xl flex flex-col items-center gap-2 active:scale-95 transition-all">
                     <i data-lucide="message-circle" class="text-green-500 w-6 h-6"></i>
-                    <span class="text-[10px] font-black text-green-500">تواصل مباشر</span>
+                    <span class="text-[10px] font-black text-green-500 uppercase">تواصل سيادي</span>
                 </a>
-                <a href="https://www.facebook.com/share/175DdVRK45/" target="_blank" class="flex-1 bg-blue-600/10 border border-blue-500/20 py-4 rounded-2xl flex flex-col items-center gap-2 active:scale-95 transition-all">
+                <a href="https://www.facebook.com/share/p/1Ha2Upj3WP/" target="_blank" class="flex-1 bg-blue-600/10 border border-blue-500/20 py-4 rounded-2xl flex flex-col items-center gap-2 active:scale-95 transition-all">
                     <i data-lucide="facebook" class="text-blue-500 w-6 h-6"></i>
-                    <span class="text-[10px] font-black text-blue-500">ميدان الفيسبوك</span>
+                    <span class="text-[10px] font-black text-blue-500 uppercase">ميدان الانتشار</span>
                 </a>
             </div>
         </div>
 
         <div id="profile-tab" class="tab-content py-10 text-center">
             <i data-lucide="fingerprint" class="w-12 h-12 text-red-600 mx-auto mb-4"></i>
-            <h3 class="text-xl font-black italic uppercase">القائد كارم</h3>
-            <p class="text-red-500 text-[10px] font-black uppercase tracking-[0.2em]">المعمار السيادي ورئيس وحدة هندسة العقول</p>
+            <h3 class="text-xl font-black italic uppercase">القائد محمد كارم</h3>
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-[0.2em]">المعمار السيادي • حكيم الميكروفون</p>
+            <div class="mt-6 bg-zinc-900/40 p-4 rounded-2xl border border-white/5 text-[10px] text-zinc-500 italic">
+                "نحنُ السيادة، بذكاءٍ إنساني مُحصّن.. عُدنا بكنوزِ العلمِ من محرابِ الاعتكاف."
+            </div>
         </div>
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 nav-blur px-6 py-4 pb-10 flex justify-around items-center">
-        <button onclick="openTab('radar', this)" class="active-tab flex flex-col items-center gap-1.5 transition-all"><i data-lucide="satellite-dish" class="w-6 h-6"></i><span class="text-[10px] font-black">الرادار</span></button>
-        <button onclick="openTab('profile', this)" class="text-zinc-500 flex flex-col items-center gap-1.5 transition-all"><i data-lucide="fingerprint" class="w-6 h-6"></i><span class="text-[10px] font-black">السيادة</span></button>
+        <button onclick="openTab('radar', this)" class="active-tab flex flex-col items-center gap-1.5 transition-all"><i data-lucide="satellite-dish" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase">الرادار</span></button>
+        <button onclick="openTab('profile', this)" class="text-zinc-500 flex flex-col items-center gap-1.5 transition-all"><i data-lucide="shield-check" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase">السيادة</span></button>
     </nav>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(b => { b.classList.remove('active-tab'); b.classList.add('text-zinc-500'); });
+            document.querySelectorAll('nav button').forEach(b => { 
+                b.classList.remove('active-tab'); 
+                b.classList.add('text-zinc-500'); 
+            });
             document.getElementById(tabId + '-tab').classList.add('active');
-            btn.classList.add('active-tab'); btn.classList.remove('text-zinc-500');
+            btn.classList.add('active-tab'); 
+            btn.classList.remove('text-zinc-500');
             if (window.navigator.vibrate) window.navigator.vibrate(8);
         }
     </script>
