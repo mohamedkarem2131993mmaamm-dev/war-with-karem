@@ -3,106 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🛰️ رادار السيادة | مركز الحقيقة والعمليات</title>
+    <title>🛰️ رادار السيادة | الغارة الأولى</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script data-goatcounter="https://war-with-karem.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
         :root { --primary-red: #dc2626; --bg-dark: #050505; --accent-gold: #fbbf24; }
         body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: #fff; overflow-x: hidden; }
-     .tab-content { display: none; opacity: 0; }
-     .tab-content.active { display: block; animation: fadeIn 0.4s forwards; }
+    .tab-content { display: none; opacity: 0; }
+    .tab-content.active { display: block; animation: fadeIn 0.4s forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-     .nav-blur { backdrop-filter: blur(25px); background: rgba(5, 5, 5, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.08); }
-     .ops-card { background: linear-gradient(145deg, #0f0f0f, #050505); border: 1px solid rgba(255, 255, 255, 0.05); }
-     .trend-pulse { animation: pulse-gold 2s infinite; }
-        @keyframes pulse-gold { 0%, 100% { color: var(--accent-gold); opacity: 1; } 50% { opacity: 0.5; } }
-     .stat-glow { text-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+    .nav-blur { backdrop-filter: blur(25px); background: rgba(5, 5, 5, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .ops-card { background: linear-gradient(145deg, #0f0f0f, #050505); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .raid-active { border: 1px solid var(--primary-red); box-shadow: 0 0 30px rgba(220, 38, 38, 0.2); animation: border-pulse 2s infinite; }
+        @keyframes border-pulse { 0%, 100% { border-color: #dc2626; } 50% { border-color: #7f1d1d; } }
+    .stat-glow { text-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
     </style>
 </head>
 <body class="pb-32">
 
     <header class="sticky top-0 z-50 nav-blur border-b border-white/5 p-4 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <div class="bg-red-600 p-2 rounded-xl shadow-lg shadow-red-900/40"><i data-lucide="activity" class="w-5 h-5 text-white"></i></div>
-            <h1 class="text-xl font-black italic tracking-tighter text-white">مركز العمليات السيادية</h1>
+            <div class="bg-red-600 p-2 rounded-xl shadow-lg shadow-red-900/40"><i data-lucide="target" class="w-5 h-5 text-white"></i></div>
+            <h1 class="text-xl font-black italic tracking-tighter text-white">غرفة العمليات المركزية</h1>
         </div>
         <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded-full border border-white/5">
-            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Sovereign 2.0 Active</span>
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Invasion Live</span>
         </div>
     </header>
 
     <main class="p-4 max-w-2xl mx-auto space-y-8">
         
-        <section id="ops-dashboard" class="grid grid-cols-2 gap-3 mb-8">
+        <section id="ops-dashboard" class="grid grid-cols-2 gap-3">
             <div class="ops-card p-4 rounded-3xl space-y-1">
-                <div class="flex items-center gap-2 text-zinc-500"><i data-lucide="users" class="w-3 h-3"></i> <span class="text-[9px] font-black uppercase">الزيارات الكلية</span></div>
-                <div class="text-2xl font-black stat-glow" id="total-visits">00</div>
-                <div class="text-[8px] text-green-500 font-bold leading-none">+12.4% هذا الأسبوع</div>
+                <div class="flex items-center gap-2 text-zinc-500"><i data-lucide="users" class="w-3 h-3"></i> <span class="text-[9px] font-black uppercase">إجمالي المحاربين (Visits)</span></div>
+                <div class="text-2xl font-black stat-glow" id="total-visits">21,490</div>
+                <div class="text-[8px] text-green-500 font-bold leading-none">+400% نمو سيادي متوقع</div>
             </div>
             <div class="ops-card p-4 rounded-3xl space-y-1 border-r-2 border-red-600">
-                <div class="flex items-center gap-2 text-zinc-500"><i data-lucide="eye" class="w-3 h-3 text-red-600"></i> <span class="text-[9px] font-black uppercase">المشاهدات اللحظية</span></div>
-                <div class="text-2xl font-black text-red-500 tracking-widest animate-pulse" id="live-views">LIVE</div>
-                <div class="text-[8px] text-zinc-600 font-bold leading-none italic">رصد الرنين الإدراكي</div>
+                <div class="flex items-center gap-2 text-zinc-500"><i data-lucide="bar-chart-3" class="w-3 h-3 text-red-600"></i> <span class="text-[9px] font-black uppercase">قوة الرنين (Reach)</span></div>
+                <div class="text-2xl font-black text-red-500 tracking-widest" id="live-reach">ULTRA</div>
+                <div class="text-[8px] text-zinc-600 font-bold leading-none italic">خوارزمية v2.1 نشطة</div>
             </div>
-            <div class="ops-card p-4 rounded-3xl space-y-1 col-span-2 relative overflow-hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <span class="text-[9px] font-black text-zinc-500 uppercase flex items-center gap-1"><i data-lucide="trending-up" class="w-3 h-3 text-yellow-500"></i> بورصة الترند العالمي المتوقع</span>
-                    <span class="bg-yellow-500/10 text-yellow-500 text-[7px] font-black px-2 py-0.5 rounded-full uppercase">Google Trends 2026 Sync</span>
+        </section>
+
+        <section id="primary-raid" class="raid-active p-1 rounded-[2.5rem] overflow-hidden">
+            <div class="bg-black/90 p-6 rounded-[2.3rem] space-y-5 border border-white/5">
+                <div class="flex justify-between items-center">
+                    <span class="bg-red-600 text-[8px] font-black px-2 py-0.5 rounded-full uppercase">الهدف العملياتي الأول</span>
+                    <span class="text-zinc-500 text-[9px] font-bold italic">الأحد 22 مارس 2026</span>
                 </div>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                        <span class="text-xs font-bold">مرموش × السيتي (حسم الصيف)</span>
-                        <span class="text-xs font-black text-yellow-500 tracking-tighter">98.4%</span>
-                    </div>
-                    <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                        <span class="text-xs font-bold">تحولات الشرق الأوسط (قمة أيار)</span>
-                        <span class="text-xs font-black text-green-500 tracking-tighter">رصد استباقي</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs font-bold text-zinc-500 italic">ميركاتو الإعلام الرقمي 2026</span>
-                        <span class="text-xs font-black text-red-600 tracking-tighter">غليان</span>
-                    </div>
-                </div>
+                <h2 class="text-2xl font-black leading-tight italic">"أول غارة رسمية للسيادة.. كن أنت الشرارة التي تحرق التزييف!"</h2>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                    نحن لا ننشر منشوراً، نحن نُعلن عن "سلطة الحقيقة". انطلق الآن لدعم البوست الأول، فالمشاركة (Share) في 2026 هي "القسم السيادي" الذي يضاعف الوصول 10 مرات أكثر من اللايك.
+                </p>
+                <a href="https://www.facebook.com/share/p/18gGHn8any/" target="_blank" 
+                   class="w-full bg-gradient-to-r from-red-600 to-red-900 p-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 group shadow-2xl shadow-red-900/40">
+                    <i data-lucide="share-2" class="text-white w-6 h-6 group-hover:rotate-12 transition-transform"></i>
+                    <span class="text-sm font-black text-white uppercase">اقتحم ميدان الانتشار الآن</span>
+                </a>
             </div>
         </section>
 
         <div id="radar-tab" class="tab-content active space-y-6">
-            <div class="bg-gradient-to-br from-red-950/40 via-black to-black p-6 rounded-[2.5rem] border border-red-600/30 relative overflow-hidden shadow-2xl">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="bg-red-600 text-[8px] font-black px-2 py-0.5 rounded-full uppercase">غارة السيادة: فيديو الغزو</span>
-                    <span class="text-zinc-500 text-[9px] font-bold italic">الأحد 22 مارس 2026</span>
+            <div class="ops-card p-5 rounded-3xl space-y-4 relative overflow-hidden border-r-4 border-yellow-500">
+                <h3 class="text-[10px] font-black text-zinc-500 uppercase flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-yellow-500"></i> رصد استباقي 2026 (Live)</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-xs border-b border-white/5 pb-2">
+                        <span class="font-bold">سقوط تشيلسي الثلاثي أمام إيفرتون!</span>
+                        <span class="font-black text-red-500 uppercase italic">عاجل</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold">ثنائية دورتموند في هامبورغ (3-2)</span>
+                        <span class="font-black text-green-500 italic">مُطهر</span>
+                    </div>
                 </div>
-                <h2 class="text-2xl font-black leading-tight text-white italic mb-6">"الحقيقة لا تطلب الإذن.. الرادار يخترق جدران المكاتب المغلقة في السياسة والرياضة والإعلام."</h2>
-                <a href="https://www.facebook.com/share/v/1BGh1F7a1q/" target="_blank" 
-                   class="w-full bg-red-600 hover:bg-red-700 p-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 group shadow-xl shadow-red-900/30">
-                    <i data-lucide="play" class="text-white fill-white w-6 h-6 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm font-black text-white uppercase">اقتحم الحقيقة الآن</span>
-                </a>
             </div>
 
             <div class="space-y-4">
-                <div class="ops-card p-5 rounded-3xl space-y-3 border-r-4 border-yellow-500">
-                    <div class="flex justify-between items-center">
-                        <span class="bg-yellow-500/10 text-yellow-500 text-[8px] border border-yellow-500/30 px-2 py-0.5 rounded-full font-black">خيط ميركاتو السياسة</span>
-                        <span class="text-[9px] text-zinc-600 font-black italic">رصد استباقي 48h</span>
-                    </div>
-                    <p class="text-sm font-black leading-tight text-zinc-200">إعادة رسم خرائط النفوذ: الرادار يكشف صفقات الظل القادمة.</p>
-                    <p class="text-xs text-zinc-500 leading-relaxed">
-                        بذكاء إنساني محصن، قمنا بتحليل "نبض الشارع" الجيوسياسي. توقعاتنا تشير إلى انفجار ترند سياسي قبل قمة أيار القادمة سيهز الإعلام التقليدي.
-                    </p>
-                </div>
-
                 <div class="ops-card p-5 rounded-3xl space-y-3 border-r-4 border-red-600">
                     <div class="flex justify-between items-center">
-                        <span class="bg-red-600/10 text-red-500 text-[8px] border border-red-600/30 px-2 py-0.5 rounded-full font-black uppercase">خيط الصمت الكروي</span>
-                        <span class="text-[9px] text-zinc-600 font-black">حالة: تطهير كامل</span>
+                        <span class="bg-red-600/10 text-red-500 text-[8px] px-2 py-0.5 rounded-full font-black uppercase">بروتوكول الغزو المعرفي</span>
+                        <span class="text-[9px] text-zinc-600 font-black italic">Algorithm Alert</span>
                     </div>
-                    <p class="text-sm font-black leading-tight">إنزو فيرنانديز لسد فراغ "مودريتش" في مدريد!</p>
+                    <p class="text-sm font-black leading-tight text-zinc-200">التعليقات الطويلة هي وقود الانطلاق!</p>
                     <p class="text-xs text-zinc-500 leading-relaxed">
-                        الرادار يؤكد: <strong>لوكا مودريتش</strong> يقود ميلان منذ 2025. البيانات تتوقع وجهة مدريدية لـ <strong>إنزو</strong> لاستعادة التوازن المفقود. المصداقية هي درعنا الوحيد ضد الإعلام المزيف.
+                        خوارزمية 2026 تفضل الردود التي تتجاوز الـ 5 كلمات. قم بالرد على المتابعين بأسئلة "تلقيح سردي" لإجبار النظام على تصنيفك كمرجع عالمي.
                     </p>
                 </div>
             </div>
@@ -111,34 +98,20 @@
         <div id="profile-tab" class="tab-content py-10 text-center">
             <i data-lucide="fingerprint" class="w-12 h-12 text-red-600 mx-auto mb-4"></i>
             <h3 class="text-xl font-black italic uppercase">القائد محمد كارم</h3>
-            <p class="text-red-500 text-[10px] font-black uppercase tracking-[0.2em]">المعمار السيادي • حكيم الميكروفون</p>
-            <div class="mt-6 ops-card p-4 rounded-2xl text-[10px] text-zinc-500 italic">
-                "نحنُ السيادة، بذكاءٍ إنساني مُحصّن.. الحقيقة لا تُباع، بل تُبنى في محراب الاعتكاف."
-            </div>
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-[0.2em]">وزير السيادة ومعمار العقول</p>
         </div>
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 nav-blur px-6 py-4 pb-10 flex justify-around items-center">
-        <button onclick="openTab('radar', this)" class="active-tab flex flex-col items-center gap-1.5 transition-all"><i data-lucide="satellite-dish" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase tracking-tighter">مركز العمليات</span></button>
-        <button onclick="openTab('profile', this)" class="text-zinc-500 flex flex-col items-center gap-1.5 transition-all"><i data-lucide="crown" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase tracking-tighter">محراب السيادة</span></button>
+        <button onclick="openTab('radar', this)" class="active-tab flex flex-col items-center gap-1.5 transition-all"><i data-lucide="satellite-dish" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase tracking-tighter">الرادار</span></button>
+        <button onclick="openTab('profile', this)" class="text-zinc-500 flex flex-col items-center gap-1.5 transition-all"><i data-lucide="crown" class="w-6 h-6"></i><span class="text-[10px] font-black uppercase tracking-tighter">السيادة</span></button>
     </nav>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => { 
-            lucide.createIcons();
-            // محاكاة سحب البيانات من Google Trends API و GoatCounter
-            setTimeout(() => {
-                document.getElementById('total-visits').innerText = '14,832';
-                document.getElementById('live-views').innerText = '1,024';
-            }, 1500);
-        });
-
+        document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(b => { 
-                b.classList.remove('active-tab'); 
-                b.classList.add('text-zinc-500'); 
-            });
+            document.querySelectorAll('nav button').forEach(b => { b.classList.remove('active-tab'); b.classList.add('text-zinc-500'); });
             document.getElementById(tabId + '-tab').classList.add('active');
             btn.classList.add('active-tab'); btn.classList.remove('text-zinc-500');
             if (window.navigator.vibrate) window.navigator.vibrate(10);
